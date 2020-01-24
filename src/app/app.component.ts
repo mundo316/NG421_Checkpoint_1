@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {ITodo} from './interfaces/itodo';
+import {TodoService} from './services/todo.service';
 
 @Component({
   selector: 'app-root',

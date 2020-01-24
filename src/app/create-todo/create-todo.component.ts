@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoService} from '../services/todo.service';
+//import interface from '../'
 
 @Component({
   selector: 'app-create-todo',
@@ -14,7 +15,10 @@ export class CreateTodoComponent implements OnInit {
   }
   addTodo():void {
     this.todoService.addTodo({
-      title: this.todoTitle
+      title: this.todoTitle,
+      status: "Todo",
+      createdAt: new Date(),
+      description: ""
     });
     
     // resets our todoTitle variable to an empty string
