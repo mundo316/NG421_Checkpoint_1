@@ -11,17 +11,20 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 })
 export class TodoComponent implements OnInit {
   @Input() todo
+
   constructor(
     private todoService : TodoService, 
     private modalService : NgbModal) 
     { }
   todoTitle = ''
+  isEditing: false;
+
   ngOnInit() {
   }
   async deleteTodo(todo){
     let result;
     const modal = this.modalService.open(ConfirmationModalComponent);
-    modal.componentInstance.modalInstance = modal;
+    modal.componentInstance.modalInstance = todo; //changed Modal to todo
     try {
       result = await modal.result;
       if(result === "yes") {

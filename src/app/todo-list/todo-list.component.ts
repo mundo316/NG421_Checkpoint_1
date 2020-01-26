@@ -9,6 +9,7 @@ import {TodoService} from '../services/todo.service';
 })
 export class TodoListComponent implements OnInit {
   @Input() status;
+  
 
   constructor(private todoService : TodoService) { }
 
