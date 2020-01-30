@@ -11,6 +11,9 @@ import {RouterModule } from '@angular/router';
 import { BoardComponent } from './board/board.component';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TodoTableComponent } from './todo-table/todo-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 
 const routes = [];
@@ -25,8 +28,8 @@ const appRoutes = RouterModule.forRoot(routes);
     ConfirmationModalComponent,
     BoardComponent,
     TodoEditComponent,
-   //NgbActiveModal,
-    //NgbModal
+    TodoTableComponent,
+    
 
   ],
   imports: [
@@ -34,6 +37,8 @@ const appRoutes = RouterModule.forRoot(routes);
     appRoutes,
     FormsModule,
     NgbModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -13,11 +13,27 @@ export class TodoService {
       status:'Todo',
       createdAt:new Date(),
       description: ""
+     },
+     { 
+      title: 'Draw for 2 hours', 
+      id: this.todoId, 
+      status:'Todo',
+      createdAt:new Date(),
+      description: ""
+     },
+     { 
+      title: 'Finish Checkpoint', 
+      id: this.todoId, 
+      status:'Todo',
+      createdAt:new Date(),
+      description: ""
      }
   ]
   statuses: ["Todo", "Doing", "Done"] ;
 
-  constructor() { }
+  constructor() { 
+    this.todoList = this.todoList;
+  }
   getTodos(status: string){
     if(status){
     return this.todoList.filter(todo => todo.status === status);
