@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {ITodo} from '../interfaces/itodo';
 import {TodoService} from '../services/todo.service';
 
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -9,13 +10,13 @@ import {TodoService} from '../services/todo.service';
 })
 export class TodoListComponent implements OnInit {
   @Input() status;
-  
+  todoList: ITodo[] ;
 
   constructor(private todoService : TodoService) { }
 
-  ngOnInit() {}
+  ngOnInit() {this.todoList = this.gettodoList()}
   
-  get todoList() {
+  gettodoList() {
     return this.todoService.getTodos(this.status);
   }
 }
