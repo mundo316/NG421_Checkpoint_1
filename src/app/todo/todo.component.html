@@ -14,7 +14,7 @@
     *ngIf= "isEditing"
     [(ngModel)]="todo.title"
     />
-
+    <p>{{todo.description}}</p>
     <div class="float-right">
         <button type="button" (click)= "deleteTodo(todo)" class="btn btn-danger btn-sm">Delete</button>
         &nbsp;
