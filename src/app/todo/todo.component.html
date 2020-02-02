@@ -1,7 +1,7 @@
 <div class="view">
     <label *ngIf="!isEditing" (dblclick)="isEditing = true">{{todo.title}}</label>
     &nbsp;
-    <select>
+    <select [(ngModel)]="todo.status">
         <option value="Todo">Todo</option>
         <option value="Doing">Doing</option>
         <option value="Done">Done</option>
@@ -14,7 +14,7 @@
     *ngIf= "isEditing"
     [(ngModel)]="todo.title"
     />
-
+    <p>{{todo.description}}</p>
     <div class="float-right">
         <button type="button" (click)= "deleteTodo(todo)" class="btn btn-danger btn-sm">Delete</button>
         &nbsp;
